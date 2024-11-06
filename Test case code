@@ -39,17 +39,17 @@ def test_customer_operations():
     
     # 1. Create a New Customer Account
     print("\nTesting Create Customer Account:")
-    customer1 = Customer("John Doe", "john.doe@example.com", "+1234567890")
+    customer1 = Customer("Khalifa Salem", "Khalifa.Salem@outlook.com", "0509876678")
     customer_list.add_customer(customer1)
     assert len(customer_list.get_all_customers()) == 1, "Failed to create new customer account"
     print(f"Created Customer: {customer1.get_name()} - Total Customers: {len(customer_list.get_all_customers())}")
     
     # 2. Update Existing Customer Account
     print("\nTesting Update Customer Account:")
-    customer_list.modify_customer(customer1, new_email="john.new@example.com", new_phone="+0987654321")
+    customer_list.modify_customer(customer1, new_email="Khalifa.new@outlook.com", new_phone="+0506521321")
     updated_customer = customer_list.get_all_customers()[0]
-    assert updated_customer.get_email() == "john.new@example.com", "Failed to update customer email"
-    assert updated_customer.get_phone() == "+0987654321", "Failed to update customer phone"
+    assert updated_customer.get_email() == "Khalifa.new@outlook.com"", "Failed to update customer email"
+    assert updated_customer.get_phone() == "+0506521321", "Failed to update customer phone"
     print(f"Updated Customer: {updated_customer.get_name()} - New Email: {updated_customer.get_email()}, New Phone: {updated_customer.get_phone()}")
     
     # 3. Delete Customer Account
@@ -63,7 +63,7 @@ def test_customer_operations():
 def test_shopping_cart_operations():
     # Create an e-book catalog and a shopping cart
     catalog = Catalog()
-    customer1 = Customer("John Doe", "john.doe@example.com", "+1234567890")
+    customer1 = Customer("Khalifa Salem", "Khalifa.Salem@outlook.com", "0509876678")
     shopping_cart = ShoppingCart(customer1)
 
     # Create some e-books to add to the catalog
@@ -117,7 +117,7 @@ def test_order_discount_application():
     ebook5 = EBook("E-Book Five", "Author E", datetime(2022, 5, 1), "Non-Fiction", Decimal('30.00'), "EPUB")
 
     # Create a customer and set loyalty points
-    customer_with_loyalty = Customer("John Doe", "john.doe@example.com", "+1234567890")
+    customer_with_loyalty = Customer("Khalifa Salem", "Khalifa.Salem@outlook.com", "0509876678")
     customer_with_loyalty.set_loyalty_points(100)  # Set loyalty points
 
     # Create a shopping cart and add e-books
@@ -163,7 +163,7 @@ def test_invoice_generation():
     print("\nTesting Invoice generation")
     
     # Create a customer with loyalty points
-    customer_with_loyalty = Customer("John Doe", "john.doe@example.com", "+1234567890")
+    customer_with_loyalty = Customer("Khalifa Salem", "Khalifa.Salem@outlook.com", "0509876678")
     customer_with_loyalty.update_loyalty_points(100)
 
     # Create the specified e-books
